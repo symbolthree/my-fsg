@@ -1,0 +1,5 @@
+CLIENT
+lib
+target
+tnsnames.ora
+*.bat

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<!-- $Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/query.xml 3     3/29/17 6:46a Christopher Ho $ -->
+<properties>
+<comment>SQL used in myFSG. Use Query.init().getSQL(key) to return SQL as string value</comment>
+<entry key="resp"><![CDATA[
+select a.responsibility_key  RESP_KEY
+     , a.responsibility_name RESP_NAME
+     , decode(a.responsibility_key, NVL(?, '^o^'), 0, 1) WEIGHT
+  from fnd_responsibility_vl a 
+     , fnd_application b 
+ where a.application_id=b.application_id 
+   and b.application_short_name='SQLGL' 
+   and nvl(a.start_date, sysdate-1) < sysdate 
+   and nvl(a.end_date, sysdate+1) > sysdate 
+order by 3,2
+]]></entry>
+<entry key="accessSetID"><![CDATA[
+select b.level_id
+     , level_value
+     , profile_option_value
+  from fnd_profile_options a
+     , fnd_profile_option_values b
+ where a.profile_option_name = 'GL_ACCESS_SET_ID'
+   and a.profile_option_id   = b.profile_option_id
+   and b.level_id            = 10001 -- site level
+   union
+select b.level_id
+     , level_value
+     , profile_option_value
+  from fnd_profile_options a
+     , fnd_profile_option_values b
+     , fnd_responsibility_vl c
+ where a.profile_option_name = 'GL_ACCESS_SET_ID'
+   and a.profile_option_id   = b.profile_option_id
+   and level_id              = 10003 -- resp level   
+   and c.responsibility_id   = b.level_value
+   and c.responsibility_key  = ?
+ order by 2
+]]></entry>
+<entry key="reportR12"><![CDATA[
+select rgv.report_id
+     , rgv.name name 
+  from RG_REPORTS_V   rgv
+     , gl_access_sets gas
+ where 1=1
+   and rgv.structure_id  = gas.chart_of_accounts_id
+   and gas.access_set_id = ?
+   and upper(rgv.report_title) like ?
+ order by name
+]]></entry>
+<entry key="report115"><![CDATA[
+select rgv.report_id 
+     , rgv.name name
+  from RG_REPORTS_V rgv
+     , GL_SETS_OF_BOOKS sob
+     , FND_RESPONSIBILITY fr
+ where 1=1 
+   and rgv.structure_id=sob.chart_of_accounts_id
+   and sob.set_of_books_id = FND_PROFILE.VALUE_SPECIFIC('GL_SET_OF_BKS_ID', null, fr.responsibility_id)
+   and fr.responsibility_key = ?
+   and upper(rgv.report_title) like ?   
+ order by report_title
+]]></entry>
+<entry key="reportParamsR12"><![CDATA[
+select rr.name           REPORT_NAME
+     , rr.row_set_id     ROW_SET_ID
+     , rr.column_set_id  COLUMN_SET_ID 
+     , colx.name         COLUMN_SET
+     , rowx.name         ROW_SET
+     , rr.row_order_id   ROW_ORDER_ID
+     , rro.name          ROW_ORDER
+     , rr.report_display_set_id DISPLAY_SET_ID
+     , rrds.name         DISPLAY_SET
+     , rr.content_set_id CONTENT_SET_ID     
+     , rrcs.name         CONTENT_SET
+     , gl.name           LEDGER_NAME
+     , gl.short_name     SHORT_NAME
+     , gl.chart_of_accounts_id COA_ID
+     , rr.rounding_option ROUNDING_OPTION
+     , flv1.meaning       ROUNDING_OPTION_MEAN
+     , nvl(rr.unit_of_measure_id, gl.currency_code) CURRENCY
+     , rr.segment_override OVERRIDE_VALUES
+     , rr.id_flex_code     FLEX_CODE_ID
+     , rr.minimum_display_level MIN_DISPLAY_LEVEL
+     , flv2.meaning             MIN_DISPLAY_LEVEL_MEAN
+     , rr.parameter_set_id      PARAMETER_SET_ID
+     , gl.latest_opened_period_name PERIOD
+  from rg_reports rr
+     , gl_ledgers gl
+     , gl_access_sets gas
+     , rg_report_axis_sets rowx
+     , rg_report_axis_sets colx
+     , RG_ROW_ORDERS rro
+     , RG_REPORT_CONTENT_SETS rrcs
+     , RG_REPORT_DISPLAY_SETS rrds
+     , fnd_lookup_values flv1
+     , fnd_lookup_values flv2
+ where 1=1
+   and gas.access_set_id = ?
+   and rr.report_id      = ?
+   and gas.default_ledger_id = gl.ledger_id
+   and rowx.axis_set_id(+)      = rr.row_set_id
+   and colx.axis_set_id(+)      = rr.column_set_id
+   and rro.row_order_id(+)      = rr.row_order_id
+   and rrcs.content_set_id(+)   = rr.content_set_id
+   and rrds.report_display_set_id(+) = rr.report_display_set_id
+   and flv1.lookup_type(+)       = 'ROUNDING_OPTION'
+   and flv1.lookup_code(+)       = rr.rounding_option
+   and flv1.language(+)          = 'US'
+   and flv2.lookup_type(+)       = 'GL_DISPLAY_LEVEL'
+   and flv2.lookup_code(+)       = rr.minimum_display_level
+   and flv2.language(+)          = 'US'   
+]]></entry>  
+<entry key="reportParams115"><![CDATA[
+select rr.name            REPORT_NAME
+     , rr.row_set_id      ROW_SET_ID
+     , rr.column_set_id   COLUMN_SET_ID 
+     , colx.name          COLUMN_SET
+     , rowx.name          ROW_SET
+     , rr.row_order_id    ROW_ORDER_ID
+     , rro.name           ROW_ORDER
+     , rr.report_display_set_id DISPLAY_SET_ID
+     , rrds.name          DISPLAY_SET
+     , rr.content_set_id  CONTENT_SET_ID     
+     , rrcs.name          CONTENT_SET
+     , gl.short_name      SHORT_NAME
+     , gl.set_of_books_id SET_OF_BOOKS_ID
+     , rr.rounding_option ROUNDING_OPTION
+     , flv1.meaning       ROUNDING_OPTION_MEAN
+     , nvl(rr.unit_of_measure_id, gl.currency_code) CURRENCY
+     , rr.segment_override OVERRIDE_VALUES
+     , rr.id_flex_code     FLEX_CODE_ID
+     , rr.minimum_display_level MIN_DISPLAY_LEVEL
+     , flv2.meaning             MIN_DISPLAY_LEVEL_MEAN
+     , rr.parameter_set_id      PARAMETER_SET_ID
+     , gl.latest_opened_period_name PERIOD
+  from rg_reports rr
+     , gl_sets_of_books gl
+     , fnd_responsibility fr
+     , rg_report_axis_sets rowx
+     , rg_report_axis_sets colx
+     , RG_ROW_ORDERS rro
+     , RG_REPORT_CONTENT_SETS rrcs
+     , RG_REPORT_DISPLAY_SETS rrds
+     , fnd_lookup_values flv1
+     , fnd_lookup_values flv2
+ where 1=1
+   and rr.report_id             = ?
+   and fr.responsibility_key    = ?
+   and gl.set_of_books_id       = FND_PROFILE.VALUE_SPECIFIC('GL_SET_OF_BKS_ID', null, fr.responsibility_id) 
+   and rowx.axis_set_id(+)      = rr.row_set_id
+   and colx.axis_set_id(+)      = rr.column_set_id
+   and rro.row_order_id(+)      = rr.row_order_id
+   and rrcs.content_set_id(+)   = rr.content_set_id
+   and rrds.report_display_set_id(+) = rr.report_display_set_id
+   and flv1.lookup_type(+)       = 'ROUNDING_OPTION'
+   and flv1.lookup_code(+)       = rr.rounding_option
+   and flv1.language(+)          = 'US'
+   and flv2.lookup_type(+)       = 'GL_DISPLAY_LEVEL'
+   and flv2.lookup_code(+)       = rr.minimum_display_level
+   and flv2.language(+)          = 'US'   
+]]></entry>
+<entry key="ledgerCount"><![CDATA[
+  select count(*) 
+    from GL_ACCESS_SET_NORM_ASSIGN 
+   where access_set_id=?
+]]></entry>
+<entry key="selectLedger"><![CDATA[
+  select b.short_name
+       , b.name
+    from GL_ACCESS_SET_NORM_ASSIGN a
+       , GL_LEDGERS b
+   where 1=1
+     and a.access_set_id=?
+     and a.ledger_id=b.ledger_id
+   order by name
+]]></entry>
+<entry key="selectCurrency"><![CDATA[
+SELECT currency_code
+     , currency_code currency 
+  FROM fnd_currencies_vl
+ WHERE enabled_flag  = 'Y' 
+   AND currency_flag = 'Y'
+ order by currency_code   
+]]></entry>
+<entry key="selectPeriodR12"><![CDATA[
+select PERIOD_NAME
+     , PERIOD_NAME PERIOD
+  from GL_PERIODS P
+     , GL_ACCESS_SETS A
+ WHERE 1=1
+   AND P.PERIOD_SET_NAME = A.PERIOD_SET_NAME
+   AND A.ACCESS_SET_ID   = ?
+   AND PERIOD_NAME IN
+   (SELECT PS.PERIOD_NAME
+      FROM GL_PERIOD_STATUSES PS
+         , GL_ACCESS_SET_LEDGERS ACC
+     WHERE PS.APPLICATION_ID = 101
+       AND PS.LEDGER_ID = ACC.LEDGER_ID
+       AND ACC.ACCESS_SET_ID = A.ACCESS_SET_ID)
+ORDER BY PERIOD_YEAR DESC
+       , PERIOD_NUM DESC
+]]></entry>
+<entry key="selectPeriod115"><![CDATA[
+select GP.PERIOD_NAME
+     , GP.PERIOD_NAME PERIOD 
+    from GL_PERIODS GP
+       , GL_SETS_OF_BOOKS SOB 
+       , FND_RESPONSIBILITY FR
+  where 1=1
+    and GP.PERIOD_SET_NAME    = SOB.PERIOD_SET_NAME 
+    and GP.PERIOD_TYPE        = SOB.ACCOUNTED_PERIOD_TYPE
+    and FR.RESPONSIBILITY_KEY = ?
+    and SOB.SET_OF_BOOKS_ID = FND_PROFILE.VALUE_SPECIFIC('GL_SET_OF_BKS_ID', null, FR.responsibility_id)  
+ORDER BY GP.PERIOD_YEAR DESC
+       , GP.PERIOD_NUM DESC
+]]></entry>
+</properties>
