@@ -34,7 +34,7 @@ import symbolthree.oracle.fsg.Constants;
 
 //~--- non-JDK imports --------------------------------------------------------
 
-import symbolthree.flower.Question;
+import symbolthree.calla.Question;
 
 public class MyFSGQuestion extends Question implements Constants {
     public static final String RCS_ID =

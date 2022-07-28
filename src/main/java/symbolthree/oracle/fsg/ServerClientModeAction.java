@@ -32,8 +32,8 @@ package symbolthree.oracle.fsg;
 
 //~--- non-JDK imports --------------------------------------------------------
 
-import symbolthree.flower.Answer;
-import symbolthree.flower.Message;
+import symbolthree.calla.Answer;
+import symbolthree.calla.Message;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;

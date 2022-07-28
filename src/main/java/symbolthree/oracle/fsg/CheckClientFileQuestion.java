@@ -39,8 +39,8 @@ import java.util.StringTokenizer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import symbolthree.flower.Answer;
-import symbolthree.flower.Choice;
+import symbolthree.calla.Answer;
+import symbolthree.calla.Choice;
 
 public class CheckClientFileQuestion extends MyFSGQuestion {
 

@@ -39,10 +39,10 @@ import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import symbolthree.flower.Answer;
-import symbolthree.flower.Choice;
-import symbolthree.flower.Helper;
-import symbolthree.flower.Message;
+import symbolthree.calla.Answer;
+import symbolthree.calla.Choice;
+import symbolthree.calla.Helper;
+import symbolthree.calla.Message;
 import symbolthree.oracle.fsg.datamodel.TemplateChecker;
 
 public class SelectTemplateQuestion extends MyFSGQuestion {
