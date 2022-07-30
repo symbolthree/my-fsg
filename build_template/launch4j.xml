@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>true</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar></jar>
+  <outfile>D:\WORK\MyFSG\dist\myFSG.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine>-display GUI -config config\myFSG.properties</cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>true</restartOnCrash>
+  <manifest></manifest>
+  <icon>D:\WORK\myFSG\build_template\myFSG.ico</icon>
+  <singleInstance>
+    <mutexName>myFSG</mutexName>
+    <windowTitle>myFSG</windowTitle>
+  </singleInstance>
+  <classPath>
+    <mainClass>symbolthree.calla.MAIN</mainClass>
+    <cp>.\config</cp>
+    <cp>.\myFSG-@build.version@.jar</cp>
+  </classPath>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+    <opt>-DLOG_DIR=log</opt>
+    <opt>-Dlog4j.configurationFile=config/log4j2.xml</opt>
+  </jre>
+  <splash>
+    <file>D:\WORK\myFSG\build_template\splash.bmp</file>
+    <waitForWindow>true</waitForWindow>
+    <timeout>60</timeout>
+    <timeoutErr>true</timeoutErr>
+  </splash>
+  <versionInfo>
+    <fileVersion>@build.version@.@build.number@.0</fileVersion>
+    <txtFileVersion>@build.version@ build @build.number@</txtFileVersion>
+    <fileDescription>myFSG</fileDescription>
+    <copyright>Christopher Ho / smybolthree.com @2017</copyright>
+    <productVersion>@build.version@.@build.number@.0</productVersion>
+    <txtProductVersion>@build.version@ build @build.number@</txtProductVersion>
+    <productName>myFSG</productName>
+    <companyName>symbolthree.com</companyName>
+    <internalName>myFSG</internalName>
+    <originalFilename>myFSG.exe</originalFilename>
+  </versionInfo>
+  <messages>
+    <startupErr>An error occurred while starting the application.</startupErr>
+    <bundledJreErr>This application was configured to use a bundled Java Runtime Environment but the runtime is missing or corrupted.</bundledJreErr>
+    <jreVersionErr>This application requires a Java Runtime Environment</jreVersionErr>
+    <launcherErr>The registry refers to a nonexistent Java Runtime Environment installation or the runtime is corrupted.</launcherErr>
+    <instanceAlreadyExistsMsg>An application instance is already running.</instanceAlreadyExistsMsg>
+  </messages>
+</launch4jConfig>

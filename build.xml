@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
++================================================
+|  FNDLOADER build Script
+|  $Header: /TOOL/FNDLOADER_V4/build.xml 1     11/14/16 1:30a Christopher Ho $
++================================================
+-->
+<project name="myFSG" default="buildEXE" basedir=".">
+  <tstamp/>
+  <property name="launch4j.dir" location="D:\WORK\launch4j-3.14"/>
+  <taskdef name="launch4j" 
+           classname="net.sf.launch4j.ant.Launch4jTask" 
+           classpath="${launch4j.dir}/launch4j.jar:${launch4j.dir}/lib/xstream.jar"/>
+
+  <target name="init">
+    <propertyfile file="build.properties">
+      <entry key="build.version" type="string" value="${build.version}"/>
+      <entry key="build.number" type="int" operation="+" default="0"/>
+      <entry key="build.time" type="date" value="now"/>
+      <entry key="build.product" type="string" value="myFSG"/>
+    </propertyfile>
+    <property file="build.properties"/>
+    <property name="sourceZipFile" value="myFSG_${build.version}-build${build.number}_src.zip"/>
+    <property name="serverZipFile" value="setup\myFSG_${build.version}.zip"/>
+    <property name="outputDir" value="dist"/>
+    <tstamp>
+        <format property="current.year" pattern="yyyy" locale="en,GB"/>
+    </tstamp>    
+    <delete dir="${outputDir}"/>
+    <mkdir dir="${outputDir}\CLIENT"/>
+    <mkdir dir="${outputDir}\config"/>
+    <mkdir dir="${outputDir}\log"/>
+    <mkdir dir="${outputDir}\output"/>
+    <mkdir dir="${outputDir}\template"/>
+  </target>
+
+  <target name="buildEXE" depends="init">
+    <delete file="launch4j.xml"/>
+    <copy file="build_template\launch4j.xml" tofile="launch4j.xml"/>
+    <replace file="launch4j.xml" token="@build.number@" value="${build.number}"/>
+    <replace file="launch4j.xml" token="@build.version@" value="${build.version}"/>
+    <launch4j configFile="launch4j.xml"/>    
+  </target>
+
+
+  <target name="build" depends="buildEXE">
+    <copy file="build.properties" todir="${outputDir}\config"/>
+    <copy file="target\myFSG-${build.version}.jar" todir="${outputDir}"/>
+
+    <copy file="build_template\myFSG.bat" todir="${outputDir}"/>
+    <replace file="${outputDir}\myFSG.bat" token="@build.version@" value="${build.version}"/>
+
+    <copy file="build_template\myFSG.sh" todir="${outputDir}"/>
+    <replace file="${outputDir}\myFSG.sh" token="@build.version@" value="${build.version}"/>
+
+    <copy todir="${outputDir}\template">
+      <fileset dir="template" includes="**/*.xlsx"/>
+    </copy>
+    <copy file="build_template\README" todir="${outputDir}"/>
+    <replace file="${outputDir}\README" token="@build.version@" value="${build.version}"/>
+    <replace file="${outputDir}\README" token="@current.year@" value="${current.year}"/>
+
+    <copy file="build_template\GPL.txt" todir="${outputDir}"/>
+
+    <copy file="build_template\LICENSE.txt" todir="${outputDir}"/>
+    
+    <copy file="build_template\calla.properties" tofile="${outputDir}\config\myFSG.properties"/>
+
+    <copy file="build_template\splash.gif" tofile="${outputDir}\splash.gif"/>
+    
+    <copy file="build_template\log4j2.xml" tofile="${outputDir}\config\log4j2.xml"/>
+
+    <replace file="${outputDir}\config\myFSG.properties" token="@build.product@" value="${build.product}"/>
+    <replace file="${outputDir}\config\myFSG.properties" token="@build.number@" value="${build.number}"/>
+    <replace file="${outputDir}\config\myFSG.properties" token="@build.time@" value="${build.time}"/>
+    <replace file="${outputDir}\config\myFSG.properties" token="@build.version@" value="${build.version}"/>
+
+<!--
+    <zip destfile="${serverZipFile}"
+         basedir="release" 
+         includes="myFSG_${build.version}/**"
+         excludes="**/*.bat,**/*.exe"/>
+    <delete file="${outputDir}\flower.properties"/>
+    <move file="${outputDir}\flower_properties.bat" tofile="${outputDir}\flower.properties"/>
+-->    
+  </target>
+
+  <target name="clientFiles" depends="init">
+    <mkdir dir="${outputDir}\CLIENT"/>
+    <copy todir="${outputDir}\CLIENT">
+      <fileset dir="CLIENT" casesensitive="false">
+        <include name="**/*.exe"/>
+        <include name="**/*.dll"/>
+        <include name="**/*.lct"/>
+        <include name="**/*.msb"/>
+        <include name="**/*.nlb"/>
+        <include name="**/*.xml"/>
+        <include name="**/*.txt"/>
+      </fileset>
+    </copy>
+    <zip destfile="setup/11.5.0.zip" basedir="${outputDir}\CLIENT" includes="11.5.0/**/*"/>
+    <zip destfile="setup/12.1.0.zip" basedir="${outputDir}\CLIENT" includes="12.1.0/**/*"/>
+    <zip destfile="setup/12.2.0.zip" basedir="${outputDir}\CLIENT" includes="12.2.0/**/*"/>
+    <copy file="build_template\client_files.txt" todir="${outputDir}\CLIENT"/>
+    <delete dir="${outputDir}\CLIENT\11.5.0"/>
+    <delete dir="${outputDir}\CLIENT\12.1.0"/>
+    <delete dir="${outputDir}\CLIENT\12.2.0"/>
+  </target>
+
+ <!--
+  <target name="buildEXE" depends="clientFiles">
+    <delete file="launch4j.xml"/>
+    <delete file="myFSG.iss"/>
+    <delete file="myFSG.exe"/>
+    <copy file="build_template\launch4j.xml" tofile="launch4j.xml"/>
+    <replace file="launch4j.xml" token="@build.number@" value="${build.number}"/>
+    <replace file="launch4j.xml" token="@build.version@" value="${build.version}"/>
+    <launch4j configFile="launch4j.xml"/>
+    <copy file="myFSG.exe" tofile="${outputDir}\myFSG.exe"/>
+    <copy file="build_template\myFSG.iss" tofile="myFSG.iss"/>
+    <replace file="myFSG.iss" token="@build.number@" value="${build.number}"/>
+    <replace file="myFSG.iss" token="@build.version@" value="${build.version}"/>
+    <exec executable="C:\WORK\InnoSetup5\ISCC.exe">
+      <arg value="myFSG.iss"/>
+    </exec>
+  </target>
+-->
+</project>
