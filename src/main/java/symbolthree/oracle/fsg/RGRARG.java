@@ -146,8 +146,6 @@ public class RGRARG implements Constants {
    
    private static SimpleDateFormat sdf = new SimpleDateFormat("MMddHHmm");
 
-   public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/RGRARG.java 4     3/29/17 6:46a Christopher Ho $";   
-   
    protected RGRARG() {
        SAXBuilder builder = new SAXBuilder();
        try {

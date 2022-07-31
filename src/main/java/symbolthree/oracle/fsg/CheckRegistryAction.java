@@ -6,7 +6,8 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 public class CheckRegistryAction extends MyFSGActionBase {
-	
+
+	private String  actionType             = null;
     private String  nls_date_format        = null;
     private String  nls_lang               = null;
     private String  nls_numeric_characters = null;
@@ -16,6 +17,10 @@ public class CheckRegistryAction extends MyFSGActionBase {
     private String  windowsBitKey           = "";
 
     static final Logger logger = LogManager.getLogger(CheckRegistryAction.class.getName());
+    
+    public CheckRegistryAction() {
+    	actionType = Answer.getInstance().getA("ActionType");
+    }
     
     @Override
     public boolean enterAction() {
@@ -99,6 +104,10 @@ public class CheckRegistryAction extends MyFSGActionBase {
 
     @Override
     public String nextAction() {
-        return "SaveConfig";
+    	if (! actionType.equals(XLS_ONLY)) {
+      	  return "RunFSG";
+      	} else {
+      	  return "FSG2Excel";
+      	}
     }
 }

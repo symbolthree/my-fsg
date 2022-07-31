@@ -61,11 +61,7 @@ public class SaveInstanceAction extends MyFSGActionBase {
 
     @Override
     public String nextAction() {
-    	if (! actionType.equals(XLS_ONLY)) {
-    	  return "RunFSG";
-    	} else {
-    	  return "FSG2Excel";
-    	}
+   	  return "CheckRegistryAction";
     }
 }
 
