@@ -37,7 +37,6 @@ import symbolthree.oracle.fsg.Constants;
 import symbolthree.calla.Action;
 
 public class MyFSGActionBase extends Action implements Constants {
-	public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/MyFSGActionBase.java 1     1/09/17 11:28p Christopher Ho $";	
     public MyFSGActionBase() {}
 }
 

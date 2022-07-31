@@ -54,7 +54,6 @@ public class SelectTemplateQuestion extends MyFSGQuestion {
 	private String lastChoice = null;
 	
     static final Logger logger = LogManager.getLogger(SelectTemplateQuestion.class.getName());	
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/SelectTemplateQuestion.java 4     2/21/17 4:36a Christopher Ho $";	
     
 	public SelectTemplateQuestion() {
 		

@@ -44,7 +44,6 @@ public class ActionTypeQuestion extends MyFSGQuestion {
 
     ArrayList<Choice> al = new ArrayList<Choice>();
     static final Logger logger = LogManager.getLogger(ActionTypeQuestion.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/ActionTypeQuestion.java 3     1/16/17 8:07a Christopher Ho $";
     
 	public ActionTypeQuestion() {
 	}

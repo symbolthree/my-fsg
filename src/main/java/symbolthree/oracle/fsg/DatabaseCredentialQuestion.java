@@ -39,8 +39,6 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 public class DatabaseCredentialQuestion extends MyFSGQuestion {
-    public static final String RCS_ID =
-        "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/DatabaseCredentialQuestion.java 1     1/09/17 11:28p Christopher Ho $";
     private boolean askPassword;
     static final Logger logger = LogManager.getLogger(DatabaseCredentialQuestion.class.getName());
     

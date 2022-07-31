@@ -47,7 +47,6 @@ public class SelectPeriodQuestion extends MyFSGQuestion {
     private String releaseName = null;
     
     static final Logger logger = LogManager.getLogger(SelectPeriodQuestion.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/SelectPeriodQuestion.java 3     3/29/17 6:46a Christopher Ho $";    
     
 	public SelectPeriodQuestion() {
         releaseName = Answer.getInstance().getB(RELEASE_NAME);				

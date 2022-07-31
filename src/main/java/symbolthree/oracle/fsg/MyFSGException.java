@@ -31,7 +31,6 @@
 package symbolthree.oracle.fsg;
 
 public class MyFSGException extends Exception {
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/MyFSGException.java 1     1/09/17 11:28p Christopher Ho $";
     private static final long serialVersionUID = 6128847200250558474L;
 
     public MyFSGException(String string) {

@@ -47,7 +47,6 @@ public class PostProcessQuestion extends MyFSGQuestion {
 	private String actionType = null;    
     File excelFile = null;
     static final Logger logger = LogManager.getLogger(PostProcessQuestion.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/PostProcessQuestion.java 5     3/29/17 6:46a Christopher Ho $";
     
 	public PostProcessQuestion() {
 		actionType = Answer.getInstance().getA("ActionType");		

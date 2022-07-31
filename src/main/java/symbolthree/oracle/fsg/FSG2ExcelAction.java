@@ -43,7 +43,6 @@ public class FSG2ExcelAction extends MyFSGActionBase {
 	
 	String actionType = null;
 	String releaseName = null;
-	public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/FSG2ExcelAction.java 4     3/29/17 6:46a Christopher Ho $";	
     static final Logger logger = LogManager.getLogger(FSG2ExcelAction.class.getName());
     
 	public FSG2ExcelAction() {

@@ -47,7 +47,6 @@ public class SelectLedgerQuestion extends MyFSGQuestion {
     private String releaseName = null;
     private ArrayList<Choice> al = new ArrayList<Choice>();
     static final Logger logger = LogManager.getLogger(SelectLedgerQuestion.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/SelectLedgerQuestion.java 3     3/29/17 6:46a Christopher Ho $";    
     
 	public SelectLedgerQuestion() {
         releaseName = Answer.getInstance().getB(RELEASE_NAME);

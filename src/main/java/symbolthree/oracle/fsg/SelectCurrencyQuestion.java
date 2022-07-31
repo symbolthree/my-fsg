@@ -47,7 +47,6 @@ public class SelectCurrencyQuestion extends MyFSGQuestion {
     private String releaseName = null;
     private ArrayList<Choice> al = new ArrayList<Choice>();
     static final Logger logger = LogManager.getLogger(SelectCurrencyQuestion.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/SelectCurrencyQuestion.java 4     3/29/17 6:46a Christopher Ho $";    
     
 	public SelectCurrencyQuestion() {
         releaseName = Answer.getInstance().getB(RELEASE_NAME);			

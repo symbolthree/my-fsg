@@ -43,7 +43,6 @@ public class ActionSummaryQuestion extends MyFSGQuestion {
 
 	private String actionType;
     static final Logger logger = LogManager.getLogger(SelectTemplateQuestion.class.getName());	
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/ActionSummaryQuestion.java 1     2/21/17 4:36a Christopher Ho $";	
     
 	public ActionSummaryQuestion() {
 		actionType = Answer.getInstance().getA("ActionType");

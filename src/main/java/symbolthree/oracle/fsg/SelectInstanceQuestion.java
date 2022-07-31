@@ -47,8 +47,6 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 public class SelectInstanceQuestion extends MyFSGQuestion {
-    public static final String RCS_ID =
-        "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/SelectInstanceQuestion.java 3     2/21/17 4:36a Christopher Ho $";
     private Hashtable<String, String> allTNSEntries     = null;
     private String                    appMode           = null;
     private String                    rtnMsg            = null;

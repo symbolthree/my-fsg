@@ -50,8 +50,6 @@ import symbolthree.oracle.fsg.Instances;
 
 public class CheckCredentialAction extends MyFSGActionBase {
 	
-    public static final String RCS_ID =
-        "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/CheckCredentialAction.java 2     1/16/17 8:07a Christopher Ho $";
     private Message rtnMsg = null;
     static final Logger logger = LogManager.getLogger(CheckCredentialAction.class.getName());
 

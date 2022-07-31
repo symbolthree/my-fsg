@@ -41,8 +41,6 @@ import org.apache.logging.log4j.LogManager;
 
 public class SaveInstanceAction extends MyFSGActionBase {
 	private String actionType = null;
-    public static final String RCS_ID =
-        "$Header: /TOOL/myFSG/src/symbolthree/oracle/fsg/SaveInstanceAction.java 4     10/20/17 11:48a Christopher Ho $";
     static final Logger logger = LogManager.getLogger(SaveInstanceAction.class.getName());
     
     public SaveInstanceAction() {

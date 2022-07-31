@@ -33,7 +33,6 @@ package symbolthree.oracle.fsg;
 import java.io.File;
 
 public interface Constants {
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/Constants.java 4     2/21/17 4:36a Christopher Ho $";
 	
     public static final String PROGRAM_VERSION           = "1.0";
     // internal properties
@@ -97,6 +96,15 @@ public interface Constants {
     public static final String SERVER_MODE         = "Server Addon Version";
     public static final String TNSNAMES            = "tnsnames.ora";
     public static final String TNS_INSTANCE_PARAMS = "TNS_INSTANCE_PARAMS";
+    
+    // NLS parameters
+    public static final String NLS_DATE_FORMAT           = "NLS_DATE_FORMAT";
+    public static final String NLS_INSTALLED             = "NLS_INSTALLED";
+    public static final String NLS_LANG                  = "NLS_LANG";
+    public static final String NLS_NUMERIC_CHARACTERS    = "NLS_NUMERIC_CHARACTERS";
+    public static final String NLS_SESSION_LANG          = "NLS_SESSION_LANG";
+    public static final String NLS_SORT                  = "NLS_SORT";
+    public static final String NLS_TRANSLATION           = "NLS_TRANSLATION";
     
     // FSG2XLSX settings
     public static final String DEFAULT_TEMPLATE    = MYFSG_APPLICATION_DIR + File.separator + 

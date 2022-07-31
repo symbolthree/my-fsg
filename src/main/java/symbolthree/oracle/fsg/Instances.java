@@ -60,7 +60,6 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 public class Instances implements Constants {
-  public static final String RCS_ID  = "$Header: /TOOL/myFSG/src/symbolthree/oracle/fsg/Instances.java 4     10/20/17 11:48a Christopher Ho $";
   private static Document    document    = null;
   private static Instances   myInstances = null;
   private File               instancesFile;
@@ -583,7 +582,6 @@ public class Instances implements Constants {
   	
   }    
   
-
   public String getReleaseNameFromDB() throws Exception {
   	String releaseName = null;
   	
@@ -609,6 +607,46 @@ public class Instances implements Constants {
       }
       logger.debug("releaseName (from DB) = " + releaseName);
       return releaseName;
+  }
+
+  public void getNLSInfo() throws Exception {
+      String    nls_lang               = null;
+      String    nls_language           = null;
+      String    nls_territory          = null;
+      String    nls_sort               = null;
+      String    nls_characterset       = null;
+      String    nls_date_format        = null;
+      String    nls_numeric_characters = null;
+      
+      Connection conn = DBConnection.getInstance().getConnection();
+      
+      String sql = "SELECT PARAMETER, VALUE FROM NLS_DATABASE_PARAMETERS";
+      ResultSet rs  = conn.createStatement().executeQuery(sql);
+
+      while (rs.next()) {
+          if (rs.getString(1).equals("NLS_LANGUAGE")) {
+              nls_language = rs.getString(2);
+          } else if (rs.getString(1).equals("NLS_TERRITORY")) {
+              nls_territory = rs.getString(2);
+          } else if (rs.getString(1).equals("NLS_CHARACTERSET")) {
+              nls_characterset = rs.getString(2);
+          } else if (rs.getString(1).equals(NLS_SORT)) {
+              nls_sort = rs.getString(2);
+          } else if (rs.getString(1).equals(NLS_DATE_FORMAT)) {
+              nls_date_format = rs.getString(2);
+          } else if (rs.getString(1).equals(NLS_NUMERIC_CHARACTERS)) {
+              nls_numeric_characters = rs.getString(2);
+          }
+      }
+
+      rs.close();
+      nls_lang = nls_language + "_" + nls_territory + "." + nls_characterset;
+      Answer.getInstance().putB(NLS_LANG, nls_lang);
+      Answer.getInstance().putB(NLS_SORT, nls_sort);
+      Answer.getInstance().putB(NLS_DATE_FORMAT, nls_date_format);
+      Answer.getInstance().putB(NLS_NUMERIC_CHARACTERS, nls_numeric_characters);
+      logger.debug("NLS Parameters: [" + nls_lang + "] [" + nls_sort + "] [" + NLS_DATE_FORMAT + "] ["
+                 + NLS_NUMERIC_CHARACTERS + "]");
   }
   
   public static String releasePath(String release) {

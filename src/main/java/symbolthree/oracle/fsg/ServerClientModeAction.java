@@ -45,8 +45,6 @@ import java.io.File;
 import java.util.Map;
 
 public class ServerClientModeAction extends MyFSGActionBase {
-    public static final String RCS_ID =
-        "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/ServerClientModeAction.java 2     1/16/17 8:07a Christopher Ho $";
     private Message msg = null;
     static final Logger logger = LogManager.getLogger(ServerClientModeAction.class.getName());
     

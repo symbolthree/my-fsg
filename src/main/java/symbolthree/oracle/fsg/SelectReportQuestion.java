@@ -50,7 +50,6 @@ public class SelectReportQuestion extends MyFSGQuestion {
     private String releaseName = null;
     
     static final Logger logger = LogManager.getLogger(SelectReportQuestion.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/SelectReportQuestion.java 3     3/29/17 6:46a Christopher Ho $";    
     
 	public SelectReportQuestion() {
         releaseName = Answer.getInstance().getB(RELEASE_NAME);		

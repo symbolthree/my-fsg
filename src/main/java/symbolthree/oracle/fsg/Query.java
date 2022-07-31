@@ -43,7 +43,6 @@ public class Query {
 	Properties prop = new Properties();
 	
     static final Logger logger = LogManager.getLogger(Query.class.getName());    
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/Query.java 2     1/09/17 11:32p Christopher Ho $";    
     
     protected Query() {
     	prop = new Properties();

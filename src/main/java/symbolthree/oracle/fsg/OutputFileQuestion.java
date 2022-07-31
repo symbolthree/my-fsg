@@ -47,7 +47,6 @@ public class OutputFileQuestion extends MyFSGQuestion {
 	private String errMsg = null;
     private String actionType = null;  
     static final Logger logger = LogManager.getLogger(OutputFileQuestion.class.getName());    	
-	public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/OutputFileQuestion.java 2     2/21/17 4:36a Christopher Ho $";
 	
     public OutputFileQuestion() {
     	actionType = Answer.getInstance().getA("ActionType");

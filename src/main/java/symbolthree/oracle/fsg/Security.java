@@ -40,8 +40,6 @@ import org.apache.logging.log4j.LogManager;
 import java.lang.reflect.Method;
 
 public class Security implements Constants {
-    public static final String RCS_ID =
-        "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/Security.java 1     1/09/17 11:28p Christopher Ho $";
     private static Security security      = null;
     private String          decryptMethod = "";
     private String          encryptMethod = "";

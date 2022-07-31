@@ -39,8 +39,6 @@ import oracle.jdbc.*;
 import java.sql.*;
 
 public class DBConnection {
-    public static final String RCS_ID =
-        "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/DBConnection.java 1     1/09/17 11:28p Christopher Ho $";
     private static DBConnection instance = null;
     private String              jdbcURL  = null;
     private Connection          connection;

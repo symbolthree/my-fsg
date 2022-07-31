@@ -55,15 +55,12 @@ public class RunFSGAction extends MyFSGActionBase {
 	private File fsgXMLFile = null;   
 	private File fsgXMLLog  = null;
 	private int exitVal = 0;
-	private String actionType = null;
 	private String appMode = null;
 	
     static final Logger logger = LogManager.getLogger(RunFSGAction.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/RunFSGAction.java 4     3/29/17 6:46a Christopher Ho $";	
     
 	public RunFSGAction() {
 		appMode = Answer.getInstance().getB(APP_MODE);				
-		actionType = Answer.getInstance().getA("ActionType");
 	}
     
 	@Override

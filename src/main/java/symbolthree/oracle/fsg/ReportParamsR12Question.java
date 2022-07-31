@@ -46,7 +46,6 @@ public class ReportParamsR12Question extends MyFSGQuestion {
 	private ArrayList<Choice> al = new ArrayList<Choice>();
 	private int ledgerCount      = 0;
     static final Logger logger = LogManager.getLogger(ReportParamsR12Question.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/ReportParamsR12Question.java 1     3/29/17 6:46a Christopher Ho $";    
     
 	public ReportParamsR12Question() {
 	}

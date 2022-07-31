@@ -36,8 +36,7 @@ import org.apache.logging.log4j.Logger;
 public class ReportFilterQuestion extends MyFSGQuestion {
 
     static final Logger logger = LogManager.getLogger(ReportFilterQuestion.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/ReportFilterQuestion.java 2     1/09/17 11:32p Christopher Ho $";
-    
+   
 	public ReportFilterQuestion() {
 	}
 	
