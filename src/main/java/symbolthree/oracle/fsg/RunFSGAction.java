@@ -247,6 +247,8 @@ public class RunFSGAction extends MyFSGActionBase {
         	          //rgTop  + fileSep + "bin" + pathSep +
         	          origPath;
         systemEnv.put("PATH", path);
+        
+        // set __COMPAT_LAYER=Win7RTM for Windows 10 or higher platform
 	}
 	
 	

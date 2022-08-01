@@ -89,6 +89,7 @@ public interface Constants {
     
     // internal values
     public static final String RELEASE_11i         = "11.5.0";
+    public static final String RELEASE_12          = "12.0.0";    
     public static final String RELEASE_121         = "12.1.0";
     public static final String RELEASE_122         = "12.2.0";
     public static final String RELEASE_NAME        = "RELEASE_NAME";

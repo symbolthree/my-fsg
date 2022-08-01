@@ -73,14 +73,18 @@ public class CheckClientFileQuestion extends MyFSGQuestion {
 			if (clientDir.isDirectory() && clientDir.exists()) {
 				logger.debug("Client directory exists");
 				dirExist = true;
-				return false;
 			} else {
 				logger.debug("Client directory does NOT exist");
 			}
+			
+			//Get NLS Info
+			logger.debug("checking NLS info...");
+			Instances.getInstance().getNLSInfo();
+			
 		} catch (Exception e) {
 			logger.catching(e);
 		}
-    	return true;
+    	return ! dirExist;
     }	
     
     

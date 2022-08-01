@@ -12,7 +12,7 @@ public class CheckRegistryAction extends MyFSGActionBase {
     private String  nls_lang               = null;
     private String  nls_numeric_characters = null;
     private String  nls_sort               = null;
-    private String  releaseName            = null;
+    private String  releaseNameInRegistry  = null;
     private int     jvmBit                 = WinRegistry.KEY_WOW64_32KEY;
     private String  windowsBitKey           = "";
 
@@ -24,6 +24,10 @@ public class CheckRegistryAction extends MyFSGActionBase {
     
     @Override
     public boolean enterAction() {
+    	if (actionType.equals(SERVER_MODE)) {
+    		return false;
+    	}
+    	
         if (System.getProperty("os.name").toUpperCase().indexOf("WINDOWS") >= 0) {
         	String bitVal = System.getProperty("sun.arch.data.model");
         	logger.debug("JVM Version=" + bitVal);
@@ -36,7 +40,16 @@ public class CheckRegistryAction extends MyFSGActionBase {
         	
         	if (winBitVal.equals("amd64")) windowsBitKey = "Wow6432Node\\";
         	
-            releaseName            = Answer.getInstance().getB(RELEASE_NAME);
+            String releaseName     = Answer.getInstance().getB(RELEASE_NAME);
+            
+            if (releaseName.startsWith("12.")) {
+            	releaseNameInRegistry = RELEASE_12;
+            } else if (releaseName.startsWith("11.5")) {
+            	releaseNameInRegistry = RELEASE_11i;
+            } else {
+            	releaseNameInRegistry = "UNKNOWN";
+            }            
+
             nls_lang               = Answer.getInstance().getB(NLS_LANG);
             nls_sort               = Answer.getInstance().getB(NLS_SORT);
             nls_date_format        = Answer.getInstance().getB(NLS_DATE_FORMAT);
@@ -54,12 +67,12 @@ public class CheckRegistryAction extends MyFSGActionBase {
             createRegistry();
             setNLSValues();
         } catch (Exception e) {
-           logger.error(e);
+           logger.error("Registry Error", e);
         }
     }
 
     private void setNLSValues() throws Exception {
-    	String rootKey = "SOFTWARE\\" + windowsBitKey + "ORACLE\\APPLICATIONS\\" + releaseName + "\\SYMBOLTHREE";
+    	String rootKey = "SOFTWARE\\" + windowsBitKey + "ORACLE\\APPLICATIONS\\" + releaseNameInRegistry + "\\SYMBOLTHREE";
     	
     	WinRegistry.createKey(WinRegistry.HKEY_LOCAL_MACHINE, rootKey);
     	
@@ -80,8 +93,11 @@ public class CheckRegistryAction extends MyFSGActionBase {
 
     private boolean createRegistry() {
 
-    	String rootKey = "SOFTWARE\\" + windowsBitKey + "ORACLE\\APPLICATIONS\\" + releaseName;
+    	String rootKey = "SOFTWARE\\" + windowsBitKey + "ORACLE\\APPLICATIONS\\" + releaseNameInRegistry;
     	try {
+       
+    		logger.debug("checking " + rootKey + "\\APPL_CONFIG");
+        	
 	    	String regValue = WinRegistry.readString(
 	    			WinRegistry.HKEY_LOCAL_MACHINE, rootKey, "APPL_CONFIG", jvmBit);
 	
