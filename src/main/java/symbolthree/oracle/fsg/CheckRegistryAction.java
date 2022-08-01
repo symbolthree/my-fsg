@@ -72,7 +72,8 @@ public class CheckRegistryAction extends MyFSGActionBase {
     }
 
     private void setNLSValues() throws Exception {
-    	String rootKey = "SOFTWARE\\" + windowsBitKey + "ORACLE\\APPLICATIONS\\" + releaseNameInRegistry + "\\SYMBOLTHREE";
+    	String rootKey = "SOFTWARE\\" + windowsBitKey + "ORACLE\\APPLICATIONS\\" + 
+                         releaseNameInRegistry + "\\" + APPL_CONFIG_WIN_KEY;
     	
     	WinRegistry.createKey(WinRegistry.HKEY_LOCAL_MACHINE, rootKey);
     	
@@ -104,7 +105,7 @@ public class CheckRegistryAction extends MyFSGActionBase {
 	        if (regValue == null || regValue.equals("")) {
 	        	WinRegistry.createKey(WinRegistry.HKEY_LOCAL_MACHINE, rootKey);
 	        	WinRegistry.writeStringValue(
-	        			WinRegistry.HKEY_LOCAL_MACHINE, rootKey, "APPL_CONFIG", "SYMBOLTHREE", jvmBit);
+	        			WinRegistry.HKEY_LOCAL_MACHINE, rootKey, "APPL_CONFIG", APPL_CONFIG_WIN_KEY, jvmBit);
 	        	
 	        	logger.debug("Registry keys created");
 	            return true;            

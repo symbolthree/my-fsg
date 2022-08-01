@@ -52,8 +52,9 @@ public interface Constants {
     public static final String LAST_CHOICE               = "LAST_CHOICE";
     
     public static final String CLIENT_MODE               = "Standalone Version";
-    public static final String MYFSG_APPLICATION_DIR     = System.getProperty("user.home") + File.separator + 
-    		                                               "symbolthree" + File.separator + "myFSG";
+
+    public static final String MYFSG_APPLICATION_DIR     = System.getProperty("user.dir") + File.separator + "config";
+    
     public static final String CONFIG_FILENAME           = "myFSG.xml";
     public static final int    ENCRYPTED_PASSWORD_LENGTH = 100;
     public static final String PASSWORD_ATTEMPT          = "PASSWORD_ATTEMPT";
@@ -71,6 +72,7 @@ public interface Constants {
     public static final String DATA_DIR                  = "DATA_DIR";    
     public static final String DATA_FILENAME             = "DATA_FILENAME";
     
+    public static final String OUTPUT_DEFAULT_DIR        = System.getProperty("user.dir") + File.separator + "output";
     public static final String OUTPUT_DIR                = "OUTPUT_DIR";
     public static final String OUTPUT_FILENAME           = "OUTPUT_FILENAME";
     
@@ -108,7 +110,7 @@ public interface Constants {
     public static final String NLS_TRANSLATION           = "NLS_TRANSLATION";
     
     // FSG2XLSX settings
-    public static final String DEFAULT_TEMPLATE    = MYFSG_APPLICATION_DIR + File.separator + 
+    public static final String DEFAULT_TEMPLATE    = System.getProperty("user.dir") + File.separator + 
     		                                         "template" + File.separator + "default.xlsx";
     
 }

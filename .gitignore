@@ -1,5 +1,8 @@
 CLIENT
-lib
 target
 tnsnames.ora
 *.bat
+.settings
+bin
+dist
+lib
