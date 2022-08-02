@@ -145,7 +145,7 @@ public class Instances implements Constants {
 		    
 		    if (dir == null || dir.equals("")) {
 			    logger.info("data dir has not set yet, set to default");
-			    dir = MYFSG_APPLICATION_DIR + File.separator + "data";
+			    dir = OUTPUT_DEFAULT_DIR;
 		    }
 		    
 		    File test = new File(dir);

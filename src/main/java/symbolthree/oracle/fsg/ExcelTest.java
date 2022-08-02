@@ -38,7 +38,7 @@ public class ExcelTest {
         XSSFSheet sheet = workbook.getSheetAt(0);
         XSSFRow row = sheet.getRow(18);
         XSSFCell cell = row.getCell(1);
-        System.out.println(cell.getCellStyle().getAlignmentEnum());
+        System.out.println(cell.getCellStyle().getAlignment());
         
         XSSFRow row2 = sheet.getRow(19);
         XSSFCell cell2 = row2.getCell(1);

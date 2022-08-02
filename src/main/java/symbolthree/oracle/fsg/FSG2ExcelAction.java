@@ -47,7 +47,6 @@ public class FSG2ExcelAction extends MyFSGActionBase {
     
 	public FSG2ExcelAction() {
 		actionType = Answer.getInstance().getA("ActionType");
-        String releaseName = Answer.getInstance().getB(RELEASE_NAME);
 	}
 
 	@Override
@@ -72,9 +71,10 @@ public class FSG2ExcelAction extends MyFSGActionBase {
 	    String s = ouputXls.substring(0, ouputXls.lastIndexOf(".")); 
 
 		if (! actionType.equals(XLS_ONLY)) {
-		  File d = xfile.getParentFile();
-		  File newXMLFile = new File(d, s+".xml");
-		  File newLogFile = new File(System.getProperty(LOG_DIR), s+".log");
+		  //File d = xfile.getParentFile();
+		  File d = new File(System.getProperty("user.dir") + File.separator + "data"); 	
+		  File newXMLFile = new File(d, s + ".xml");
+		  File newLogFile = new File(System.getProperty(LOG_DIR), s + ".log");
 		  
 		  try {
 		    FileUtils.moveFile(xfile, newXMLFile);
@@ -105,6 +105,7 @@ public class FSG2ExcelAction extends MyFSGActionBase {
         //}
         
 		  logger.debug("FSG2Excel done");
+		  
 		}
 	}
 	

@@ -44,7 +44,7 @@ import java.util.regex.Pattern;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.common.usermodel.HyperlinkType;
-import org.apache.poi.hssf.util.CellReference;
+import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.util.CellAddress;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -402,7 +402,7 @@ public class FSG2XLSX implements Constants {
     	  for (int colIdx=0;colIdx<lastCell;colIdx++) {
     		  logger.debug("reading cell " + CellReference.convertNumToColString(colIdx)+(rowIdx+1));
     		  cell = row.getCell(colIdx);
-    		  if (cell !=null && cell.getCellTypeEnum()==CellType.STRING) {
+    		  if (cell !=null && cell.getCellType()==CellType.STRING) {
     		    String cellStr = cell.getStringCellValue();
     		    
     		    if (cellStr.equals(START_KEYWORD) && _sheet.getSheetName().equals(TEMPLATE_WKS_NAME)) {

@@ -30,6 +30,7 @@
     <mkdir dir="${outputDir}\CLIENT"/>
     <mkdir dir="${outputDir}\config"/>
     <mkdir dir="${outputDir}\log"/>
+    <mkdir dir="${outputDir}\data"/>
     <mkdir dir="${outputDir}\output"/>
     <mkdir dir="${outputDir}\template"/>
   </target>

@@ -32,7 +32,6 @@
 package symbolthree.oracle.fsg;
 
 import symbolthree.calla.Answer;
-import symbolthree.oracle.fsg.Instances;
 
 //~--- non-JDK imports --------------------------------------------------------
 
