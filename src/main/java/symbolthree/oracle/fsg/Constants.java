@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/Constants.java $
- * $Author: Christopher Ho $
- * $Date: 2/21/17 4:36a $
- * $Revision: 4 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg;

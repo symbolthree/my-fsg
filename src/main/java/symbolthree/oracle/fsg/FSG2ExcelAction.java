@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/FSG2ExcelAction.java $
- * $Author: Christopher Ho $
- * $Date: 3/29/17 6:46a $
- * $Revision: 4 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg;

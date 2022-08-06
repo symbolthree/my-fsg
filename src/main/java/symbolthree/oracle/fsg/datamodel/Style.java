@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/datamodel/Style.java $
- * $Author: Christopher Ho $
- * $Date: 3/29/17 6:46a $
- * $Revision: 3 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg.datamodel;
@@ -62,7 +56,6 @@ public class Style {
 	private XSSFWorkbook workbook = null; 
 
     static final Logger logger = LogManager.getLogger(Style.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/datamodel/Style.java 3     3/29/17 6:46a Christopher Ho $";
     
 	public Style(XSSFWorkbook _xlsx) {
 		workbook = _xlsx;

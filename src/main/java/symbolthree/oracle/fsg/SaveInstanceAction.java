@@ -20,14 +20,7 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myFSG/src/symbolthree/oracle/fsg/SaveInstanceAction.java $
- * $Author: Christopher Ho $
- * $Date: 10/20/17 11:48a $
- * $Revision: 4 $
 ******************************************************************************/
-
 
 package symbolthree.oracle.fsg;
 

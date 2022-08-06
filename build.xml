@@ -62,8 +62,12 @@
     <replace file="${outputDir}\README" token="@current.year@" value="${current.year}"/>
 
     <copy file="build_template\GPL.txt" todir="${outputDir}"/>
-
+    
     <copy file="build_template\LICENSE.txt" todir="${outputDir}"/>
+    <replace file="${outputDir}\LICENSE.txt" token="@build.version@" value="${build.version}"/>
+    <replace file="${outputDir}\LICENSE.txt" token="@current.year@" value="${current.year}"/>
+
+    <copy file="build_template\client_files.txt" todir="${outputDir}\CLIENT"/>
     
     <copy file="build_template\calla.properties" tofile="${outputDir}\config\myFSG.properties"/>
 

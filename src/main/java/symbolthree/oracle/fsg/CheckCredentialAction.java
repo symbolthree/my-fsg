@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/CheckCredentialAction.java $
- * $Author: Christopher Ho $
- * $Date: 1/16/17 8:07a $
- * $Revision: 2 $
 ******************************************************************************/
 
 

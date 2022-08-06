@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/ReportFilterQuestion.java $
- * $Author: Christopher Ho $
- * $Date: 1/09/17 11:32p $
- * $Revision: 2 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg;

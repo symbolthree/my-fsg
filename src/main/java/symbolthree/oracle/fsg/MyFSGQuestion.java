@@ -20,19 +20,9 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/MyFSGQuestion.java $
- * $Author: Christopher Ho $
- * $Date: 1/09/17 11:28p $
- * $Revision: 1 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg;
-
-import symbolthree.oracle.fsg.Constants;
-
-//~--- non-JDK imports --------------------------------------------------------
 
 import symbolthree.calla.Question;
 

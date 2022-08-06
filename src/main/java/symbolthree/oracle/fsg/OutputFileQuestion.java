@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/OutputFileQuestion.java $
- * $Author: Christopher Ho $
- * $Date: 2/21/17 4:36a $
- * $Revision: 2 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg;

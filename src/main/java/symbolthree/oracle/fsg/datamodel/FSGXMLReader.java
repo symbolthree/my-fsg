@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myFSG/src/symbolthree/oracle/fsg/datamodel/FSGXMLReader.java $
- * $Author: Christopher Ho $
- * $Date: 10/20/17 11:48a $
- * $Revision: 5 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg.datamodel;
@@ -55,7 +49,6 @@ public class FSGXMLReader {
     private XPathExpression<Element> xpath    = null;
     
     static final Logger logger = LogManager.getLogger(FSGXMLReader.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myFSG/src/symbolthree/oracle/fsg/datamodel/FSGXMLReader.java 5     10/20/17 11:48a Christopher Ho $";
     
 	public FSGXMLReader(String _xmlFile) {
 		

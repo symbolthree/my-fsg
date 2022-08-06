@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/datamodel/FSG2XLSX.java $
- * $Author: Christopher Ho $
- * $Date: 3/29/17 6:46a $
- * $Revision: 3 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg.datamodel;
@@ -54,7 +48,6 @@ import org.apache.poi.xssf.usermodel.XSSFHyperlink;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFCreationHelper;
 
 import symbolthree.oracle.fsg.Constants;
 import symbolthree.oracle.fsg.MyFSGException;
@@ -80,7 +73,6 @@ public class FSG2XLSX implements Constants {
     private static Pattern pattern = Pattern.compile("&\\s*(\\w+)");
     
     static final Logger logger = LogManager.getLogger(FSG2XLSX.class.getName());
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/datamodel/FSG2XLSX.java 3     3/29/17 6:46a Christopher Ho $";
     
 	public FSG2XLSX(String _xml) {    
         inputXMLFile    = new File(_xml);

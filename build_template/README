@@ -1,6 +1,6 @@
 myFSG @build.version@
 
-Copyright (C) @current.year@ Christopher.Ho@symbolthree.com 
+Copyright (C) 2016 - @current.year@ Christopher.Ho@symbolthree.com 
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -19,20 +19,24 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 ========================================
 README for myFSG @build.version@
 ========================================
-- Install the setup executable.
+- Unzip the release archive to any folder
 
-- Copy tnsnames.ora to the root of the installed directory; or
+- Copy tnsnames.ora to the root of this folder; or
   set a system variable TNS_ADMIN to point to your tnsnames.ora; or
   set a system variable ORACLE_HOME and tnsnames.ora should be located 
   in $ORACLE_HOME/network/admin directory.
 
+- Run myFSG.exe or myFSG.bat (Client or Server mode in Windows),
+  run myFSG.sh (Server mode in *nix)
+
 =====================
 Changes in v2.0
 =====================
+- JRE 8 or higher is required 
 - Maven build of uber jar
 - Upgrade calla library to 2.0
-- Upgrade Apache POI library to 
-- Upgrade Oracle JDBC driver to 
+- Upgrade Apache POI library to 5.2.2
+- Upgrade Oracle JDBC driver to 19.15
 
 =====================
 Changes in v1.1

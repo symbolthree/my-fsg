@@ -2,9 +2,9 @@
 License Agreement
 =================
 
-myFSG ${}
+myFSG @build.version@
 
-Copyright (c) ${CURRENT.YEAR} Christopher.Ho@symbolthree.com
+Copyright (c) 2017 - @current.year@ Christopher.Ho@symbolthree.com
 
 All rights reserved.
 

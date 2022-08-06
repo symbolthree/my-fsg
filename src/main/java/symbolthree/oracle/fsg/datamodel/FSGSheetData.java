@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/datamodel/FSGSheetData.java $
- * $Author: Christopher Ho $
- * $Date: 1/09/17 11:33p $
- * $Revision: 2 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg.datamodel;
@@ -34,7 +28,6 @@ public class FSGSheetData {
 
 	private String sheetName;
 	private String[][] sheetData;
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/datamodel/FSGSheetData.java 2     1/09/17 11:33p Christopher Ho $";
 	
 	public FSGSheetData(String _sheetName) {
 		this.sheetName = _sheetName;

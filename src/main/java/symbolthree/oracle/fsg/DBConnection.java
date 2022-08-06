@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/DBConnection.java $
- * $Author: Christopher Ho $
- * $Date: 1/09/17 11:28p $
- * $Revision: 1 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg;

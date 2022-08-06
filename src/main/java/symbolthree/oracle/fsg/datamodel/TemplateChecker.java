@@ -20,12 +20,6 @@
  *
  * E-mail: christopher.ho@symbolthree.com
  *
- * ================================================
- *
- * $Archive: /TOOL/myMSG/src/symbolthree/oracle/fsg/datamodel/TemplateChecker.java $
- * $Author: Christopher Ho $
- * $Date: 3/29/17 6:46a $
- * $Revision: 1 $
 ******************************************************************************/
 
 package symbolthree.oracle.fsg.datamodel;
@@ -47,7 +41,6 @@ public class TemplateChecker {
 	private static int TEMPLATE_MINOR_VERSION = 0;
 	
     static final Logger logger = LogManager.getLogger(TemplateChecker.class.getName());	
-    public static final String RCS_ID = "$Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/datamodel/TemplateChecker.java 1     3/29/17 6:46a Christopher Ho $";
     
 	public TemplateChecker(String _file) {
 		templateFile = new File(_file);

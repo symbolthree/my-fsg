@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
-<!-- $Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/query.xml 3     3/29/17 6:46a Christopher Ho $ -->
 <properties>
 <comment>SQL used in myFSG. Use Query.init().getSQL(key) to return SQL as string value</comment>
 <entry key="resp"><![CDATA[
