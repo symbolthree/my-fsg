@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-+================================================
-|  FNDLOADER build Script
-|  $Header: /TOOL/FNDLOADER_V4/build.xml 1     11/14/16 1:30a Christopher Ho $
-+================================================
--->
 <project name="myFSG" default="buildEXE" basedir=".">
   <tstamp/>
   <property name="launch4j.dir" location="D:\WORK\launch4j-3.14"/>
@@ -20,9 +14,8 @@
       <entry key="build.product" type="string" value="myFSG"/>
     </propertyfile>
     <property file="build.properties"/>
-    <property name="sourceZipFile" value="myFSG_${build.version}-build${build.number}_src.zip"/>
-    <property name="serverZipFile" value="setup\myFSG_${build.version}.zip"/>
     <property name="outputDir" value="dist"/>
+    <property name="serverZipFile" value="release\myFSG-${build.version}.zip"/>    
     <tstamp>
         <format property="current.year" pattern="yyyy" locale="en,GB"/>
     </tstamp>    
@@ -79,15 +72,6 @@
     <replace file="${outputDir}\config\myFSG.properties" token="@build.number@" value="${build.number}"/>
     <replace file="${outputDir}\config\myFSG.properties" token="@build.time@" value="${build.time}"/>
     <replace file="${outputDir}\config\myFSG.properties" token="@build.version@" value="${build.version}"/>
-
-<!--
-    <zip destfile="${serverZipFile}"
-         basedir="release" 
-         includes="myFSG_${build.version}/**"
-         excludes="**/*.bat,**/*.exe"/>
-    <delete file="${outputDir}\flower.properties"/>
-    <move file="${outputDir}\flower_properties.bat" tofile="${outputDir}\flower.properties"/>
--->    
   </target>
 
   <target name="clientFiles" depends="init">
@@ -112,22 +96,8 @@
     <delete dir="${outputDir}\CLIENT\12.2.0"/>
   </target>
 
- <!--
-  <target name="buildEXE" depends="clientFiles">
-    <delete file="launch4j.xml"/>
-    <delete file="myFSG.iss"/>
-    <delete file="myFSG.exe"/>
-    <copy file="build_template\launch4j.xml" tofile="launch4j.xml"/>
-    <replace file="launch4j.xml" token="@build.number@" value="${build.number}"/>
-    <replace file="launch4j.xml" token="@build.version@" value="${build.version}"/>
-    <launch4j configFile="launch4j.xml"/>
-    <copy file="myFSG.exe" tofile="${outputDir}\myFSG.exe"/>
-    <copy file="build_template\myFSG.iss" tofile="myFSG.iss"/>
-    <replace file="myFSG.iss" token="@build.number@" value="${build.number}"/>
-    <replace file="myFSG.iss" token="@build.version@" value="${build.version}"/>
-    <exec executable="C:\WORK\InnoSetup5\ISCC.exe">
-      <arg value="myFSG.iss"/>
-    </exec>
+  <target name="zipFile" depends="build">
+    <zip destfile="${serverZipFile}" basedir="dist" />
   </target>
--->
+  
 </project>
