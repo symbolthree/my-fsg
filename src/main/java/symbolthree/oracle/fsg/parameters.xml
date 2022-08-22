@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Header: /TOOL/myMSG/src/symbolthree/oracle/fsg/parameters.xml 4     3/29/17 6:46a Christopher Ho $ -->
+<RGRARG>
+  <parameters release="11.5.0" noOfParameter="22">
+    <parameter position="0"  name="RGRARG"            desc="RGRARG executable"       default="RGRARG"     value=""   meaning=""/>
+    <parameter position="1"  name="USERID"            desc="username/password"       default=""           value=""   meaning=""/>
+    <parameter position="2"  name="CONC_REQ_ID"       desc="Concurrent Request ID"   default="0"          value=""   meaning=""/>
+    <parameter position="3"  name="IMPLICIT"          desc="implicit request"        default="Y"          value=""   meaning=""/>
+    <parameter position="4"  name="PERIOD"            desc="Period of Interest"      default=""           value=""   meaning=""/>
+    <parameter position="5"  name="EFFECTIVE_DATE"    desc="Effective Date"          default=""           value=""   meaning=""/>
+    <parameter position="6"  name="REPORT_ID"         desc="Report ID"               default=""           value=""   meaning=""/>    
+    <parameter position="7"  name="ROW_SET_ID"        desc="Row Set ID"              default=""           value=""   meaning=""/>
+    <parameter position="8"  name="COLUMN_SET_ID"     desc="Column Set ID"           default=""           value=""   meaning=""/>
+    <parameter position="9"  name="CURRENCY"          desc="Unit of Measure ID"      default=""           value=""   meaning=""/>
+    <parameter position="10" name="SET_OF_BOOKS_ID"   desc="Default Set of Books ID" default=""           value=""   meaning=""/>
+    <parameter position="11" name="CONTENT_SET_ID"    desc="Content Set ID"          default=""           value=""   meaning=""/>        
+    <parameter position="12" name="PARAMETER_SET_ID"  desc="Parameter Set ID"        default=""           value=""   meaning=""/>
+    <parameter position="13" name="MIN_DISPLAY_LEVEL" desc="Miniumum Display Level"  default=""           value=""   meaning=""/>
+    <parameter position="14" name="OVERRIDE_VALUES"   desc="Override Values"         default=""           value=""   meaning=""/>
+    <parameter position="15" name="MAX_PAGE_LENGTH"   desc="Maximum Page Length"     default="58"         value=""   meaning=""/>
+    <parameter position="16" name="ROW_ORDER_ID"      desc="Row Order ID"            default=""           value=""   meaning=""/>
+    <parameter position="17" name="EXCEPTION_FLAG"    desc="Exceptions Flag"         default="N"          value=""   meaning=""/>
+    <parameter position="18" name="ROUNDING_OPTION"   desc="Rounding Option"         default=""           value=""   meaning=""/>
+    <parameter position="19" name="DISPLAY_SET_ID"    desc="Report Display Set ID"   default=""           value=""   meaning=""/>
+    <parameter position="20" name="OUTPUT_OPTION"     desc="Output Option"           default="Y"          value=""   meaning=""/>
+    <parameter position="21" name="SUBREQUEST_RUN_ID" desc="Sub-Request Run ID"      default="-998"       value=""   meaning=""/>
+    <parameter position="22" name="APP_SHORT_NAME"    desc="Application Shortname"   default="SQLGL"      value=""   meaning=""/>
+  </parameters>
+  <parameters release="12.1.0" noOfParameter="27">
+    <parameter position="0"  name="RGRARG"            desc="RGRARG executable"      default="RGRARG"     value=""   meaning=""/>
+    <parameter position="1"  name="USERID"            desc="username/password"      default=""           value=""   meaning=""/>
+    <parameter position="2"  name="CONC_REQ_ID"       desc="Concurrent Request ID"  default="0"          value=""   meaning=""/>
+    <parameter position="3"  name="IMPLICIT"          desc="implicit request"       default="Y"          value=""   meaning=""/>
+    <parameter position="4"  name="GL_ACCESS_SET_ID"  desc="Data Access Set ID"     default=""           value=""   meaning=""/>
+    <parameter position="5"  name="COA_ID"            desc="Chart of Accounts ID"   default=""           value=""   meaning=""/>
+    <parameter position="6"  name="ADHOC_PREFIX"      desc="ADHOC Prefix"           default="FSG-ADHOC-" value=""   meaning=""/>
+    <parameter position="7"  name="INDUSTRY"          desc="Industry"               default="C"          value=""   meaning=""/>
+    <parameter position="8"  name="FLEX_CODE_ID"      desc="Flex Code ID"           default="GLLE"       value=""   meaning=""/>
+    <parameter position="9"  name="SHORT_NAME"        desc="Default Ledger ID"      default=""           value=""   meaning=""/>
+    <parameter position="10" name="REPORT_ID"         desc="Report ID"              default=""           value=""   meaning=""/>
+    <parameter position="11" name="ROW_SET_ID"        desc="Row Set ID"             default=""           value=""   meaning=""/>
+    <parameter position="12" name="COLUMN_SET_ID"     desc="Column Set ID"          default=""           value=""   meaning=""/>
+    <parameter position="13" name="PERIOD"            desc="Period of Interest"     default=""           value=""   meaning=""/>
+    <parameter position="14" name="CURRENCY"          desc="Unit of Measure ID"     default=""           value=""   meaning=""/>
+    <parameter position="15" name="ROUNDING_OPTION"   desc="Rounding Option"        default=""           value=""   meaning=""/>
+    <parameter position="16" name="OVERRIDE_VALUES"   desc="Override Values"        default=""           value=""   meaning=""/>
+    <parameter position="17" name="CONTENT_SET_ID"    desc="Content Set ID"         default=""           value=""   meaning=""/>
+    <parameter position="18" name="ROW_ORDER_ID"      desc="Row Order ID"           default=""           value=""   meaning=""/>
+    <parameter position="19" name="DISPLAY_SET_ID"    desc="Report Display Set ID"  default=""           value=""   meaning=""/>
+    <parameter position="20" name="OUTPUT_OPTION"     desc="Output Option"          default="Y"          value=""   meaning=""/>
+    <parameter position="21" name="EXCEPTION_FLAG"    desc="Exceptions Flag"        default="N"          value=""   meaning=""/>
+    <parameter position="22" name="MIN_DISPLAY_LEVEL" desc="Miniumum Display Level" default=""           value=""   meaning=""/>
+    <parameter position="23" name="EFFECTIVE_DATE"    desc="Effective Date"         default=""           value=""   meaning=""/>
+    <parameter position="24" name="PARAMETER_SET_ID"  desc="Parameter Set ID"       default=""           value=""   meaning=""/>
+    <parameter position="25" name="MAX_PAGE_LENGTH"   desc="Maximum Page Length"    default="58"         value=""   meaning=""/>
+    <parameter position="26" name="SUBREQUEST_RUN_ID" desc="Sub-Request Run ID"     default="-998"       value=""   meaning=""/>
+    <parameter position="27" name="APP_SHORT_NAME"    desc="Application Shortname"  default="SQLGL"      value=""   meaning=""/>
+  </parameters>
+  <parameters release="12.2.0" noOfParameter="27">
+    <parameter position="0"  name="RGRARG"            desc="RGRARG executable"      default="RGRARG"     value=""   meaning=""/>
+    <parameter position="1"  name="USERID"            desc="username/password"      default=""           value=""   meaning=""/>
+    <parameter position="2"  name="CONC_REQ_ID"       desc="Concurrent Request ID"  default="0"          value=""   meaning=""/>
+    <parameter position="3"  name="IMPLICIT"          desc="implicit request"       default="Y"          value=""   meaning=""/>
+    <parameter position="4"  name="GL_ACCESS_SET_ID"  desc="Data Access Set ID"     default=""           value=""   meaning=""/>
+    <parameter position="5"  name="COA_ID"            desc="Chart of Accounts ID"   default=""           value=""   meaning=""/>
+    <parameter position="6"  name="ADHOC_PREFIX"      desc="ADHOC Prefix"           default="FSG-ADHOC-" value=""   meaning=""/>
+    <parameter position="7"  name="INDUSTRY"          desc="Industry"               default="C"          value=""   meaning=""/>
+    <parameter position="8"  name="FLEX_CODE_ID"      desc="Flex Code ID"           default="GLLE"       value=""   meaning=""/>
+    <parameter position="9"  name="SHORT_NAME"        desc="Default Ledger ID"      default=""           value=""   meaning=""/>
+    <parameter position="10" name="REPORT_ID"         desc="Report ID"              default=""           value=""   meaning=""/>
+    <parameter position="11" name="ROW_SET_ID"        desc="Row Set ID"             default=""           value=""   meaning=""/>
+    <parameter position="12" name="COLUMN_SET_ID"     desc="Column Set ID"          default=""           value=""   meaning=""/>
+    <parameter position="13" name="PERIOD"            desc="Period of Interest"     default=""           value=""   meaning=""/>
+    <parameter position="14" name="CURRENCY"          desc="Unit of Measure ID"     default=""           value=""   meaning=""/>
+    <parameter position="15" name="ROUNDING_OPTION"   desc="Rounding Option"        default=""           value=""   meaning=""/>
+    <parameter position="16" name="OVERRIDE_VALUES"   desc="Override Values"        default=""           value=""   meaning=""/>
+    <parameter position="17" name="CONTENT_SET_ID"    desc="Content Set ID"         default=""           value=""   meaning=""/>
+    <parameter position="18" name="ROW_ORDER_ID"      desc="Row Order ID"           default=""           value=""   meaning=""/>
+    <parameter position="19" name="DISPLAY_SET_ID"    desc="Report Display Set ID"  default=""           value=""   meaning=""/>
+    <parameter position="20" name="OUTPUT_OPTION"     desc="Output Option"          default="Y"          value=""   meaning=""/>
+    <parameter position="21" name="EXCEPTION_FLAG"    desc="Exceptions Flag"        default="N"          value=""   meaning=""/>
+    <parameter position="22" name="MIN_DISPLAY_LEVEL" desc="Miniumum Display Level" default=""           value=""   meaning=""/>
+    <parameter position="23" name="EFFECTIVE_DATE"    desc="Effective Date"         default=""           value=""   meaning=""/>
+    <parameter position="24" name="PARAMETER_SET_ID"  desc="Parameter Set ID"       default=""           value=""   meaning=""/>
+    <parameter position="25" name="MAX_PAGE_LENGTH"   desc="Maximum Page Length"    default="58"         value=""   meaning=""/>
+    <parameter position="26" name="SUBREQUEST_RUN_ID" desc="Sub-Request Run ID"     default="-998"       value=""   meaning=""/>
+    <parameter position="27" name="APP_SHORT_NAME"    desc="Application Shortname"  default="SQLGL"      value=""   meaning=""/>
+  </parameters>  
+</RGRARG>
